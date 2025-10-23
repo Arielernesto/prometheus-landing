@@ -10,11 +10,11 @@
     <!-- Desktop Navigation -->
     <div class="text-white font-medium text-base hidden lg:block">
       <ul class="flex gap-x-8">
-        <li class="hover:text-cyan-400 transition-colors cursor-pointer">Contacto</li>
-        <li class="hover:text-cyan-400 transition-colors cursor-pointer">Servicios</li>
-        <li class="hover:text-cyan-400 transition-colors cursor-pointer">Proyectos</li>
-        <li class="hover:text-cyan-400 transition-colors cursor-pointer">Nosotros</li>
-        <li class="hover:text-cyan-400 transition-colors cursor-pointer">Blog</li>
+        <li class="hover:text-orange-400 transition-colors cursor-pointer">Contacto</li>
+        <li class="hover:text-orange-400 transition-colors cursor-pointer">Servicios</li>
+        <li class="hover:text-orange-400 transition-colors cursor-pointer">Proyectos</li>
+        <li class="hover:text-orange-400 transition-colors cursor-pointer">Nosotros</li>
+        <li class="hover:text-orange-400 transition-colors cursor-pointer">Blog</li>
       </ul>
     </div>
 
