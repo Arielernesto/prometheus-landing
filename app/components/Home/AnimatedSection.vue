@@ -100,7 +100,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
- <section class=" relative">
+ <section class=" relative md:px-5">
   <div class="bg-[#1A1A1A] rounded-4xl sticky top-0 text-white sticky-section_panel">
     <div class="gallery" id="smooth-content">
       <!-- LADO IZQUIERDO (Texto desktop) -->
