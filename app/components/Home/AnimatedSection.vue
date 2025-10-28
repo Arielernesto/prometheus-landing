@@ -2,7 +2,7 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import ScrollSmoother from 'gsap/src/ScrollSmoother'
+import ScrollSmoother from 'gsap/ScrollSmoother'
 import CTAAnimated from '../CTA-Animated.vue'
 import { sections } from '~/data/Home'
 
