@@ -1,6 +1,12 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { BarChart3, TrendingUp, Database, Zap } from 'lucide-vue-next'
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/src/ScrollTrigger';
+import SplitText from 'gsap/src/SplitText';
+
+
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const isVisible = ref(false)
 const warnings = ref([
@@ -11,14 +17,56 @@ const warnings = ref([
 ])
 
 onMounted(() => {
-  setTimeout(() => {
-    isVisible.value = true
-  }, 100)
-})
+  const heading = document.querySelector("#heading");
+  const heading2 = document.querySelector("#heading2");
+
+  if (heading && heading2) {
+    // SplitText para cada uno
+    const split1 = new SplitText(heading, { type: "chars" });
+    const split2 = new SplitText(heading2, { type: "chars" });
+
+    // Animación para el primero
+    gsap.from(split1.chars, {
+      y: 40,
+      autoAlpha: 0,
+      stagger: 0.05,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: heading,
+        start: "top 80%",
+        toggleActions: "play none none none"
+      }
+    });
+
+    // 🔥 Animación para el segundo con color naranja temporal
+    split2.chars.forEach(char => {
+      char.style.color = "#f97316"; // naranja Tailwind: orange-500
+    });
+
+    gsap.from(split2.chars, {
+      scale: 0.8,
+      y: -20,
+      autoAlpha: 0,
+      stagger: 0.06,
+      ease: "elastic.out(1, 0.5)",
+      scrollTrigger: {
+        trigger: heading2,
+        start: "top 80%",
+        toggleActions: "play none none none"
+      },
+    });
+  }
+
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      isVisible.value = true;
+    }, 100);
+  });
+});
 </script>
 
 <template>
-  <section class="py-4 px-4 sm:px-0 md:px-0 md:pl-12">
+  <section class="py-4 px-4 sm:px-0 md:px-0 md:pl-12 sticky-section_panel">
     <div class="flex flex-col lg:flex-row gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 items-center">
       
       <!-- Contenido izquierdo -->
@@ -26,9 +74,15 @@ onMounted(() => {
         class="flex-1 space-y-4 sm:space-y-5 md:space-y-6 transition-all duration-700 ease-out w-full"
         :class="isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'"
       >
-        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight text-balance">
-          Tus datos tienen un <span class="texto-gradiente">potencial oculto</span>
-        </h1>
+       <div class="text-animated">
+  <h1 id="heading" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight text-balance">
+    Tus datos tienen un
+  </h1>
+  <h1 id="heading2" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white  leading-tight text-balance">
+    potencial oculto
+  </h1>
+</div>
+
         <p class="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl text-pretty">
           Has estado recopilando datos durante años, pero sin las herramientas adecuadas, son solo números en pantalla. Transforma datos crudos en decisiones que impulsen el crecimiento real.
         </p>

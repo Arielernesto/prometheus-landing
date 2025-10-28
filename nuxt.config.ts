@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     componentDir: './components/ui'
   },
   css: ['~/assets/css/main.css'],
-  modules: ["@nuxt/image", "shadcn-nuxt", "nuxt-marquee"],
+  modules: ["@nuxt/image", "shadcn-nuxt", "nuxt-marquee", "@pinia/nuxt"],
   vite: {
     plugins: [
       tailwindcss(),

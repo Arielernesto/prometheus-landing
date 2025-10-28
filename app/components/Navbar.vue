@@ -1,6 +1,6 @@
 <template>
   <!-- Improved navbar with better responsive design -->
-  <nav class="fixed px-4 md:px-8 lg:px-10 py-4 z-50 flex justify-between items-center top-0 left-0 w-full bg-black bg-opacity-50 backdrop-blur-md">
+  <nav class="fixed px-4 md:px-8 lg:px-10 py-4 z-50 flex justify-between items-center top-0 left-0 w-[100vw] bg-black bg-opacity-50 backdrop-blur-md">
     <!-- Logo Section -->
     <div class="text-white font-bold flex gap-x-3 items-center">
      <NuxtImg src="/icon.png" class="w-12 h-12 object-contain"></NuxtImg>
