@@ -9,11 +9,11 @@
 <template>
   <Navbar />
   <CursorFollower></CursorFollower>
-  <div id="smooth-wrapper">
-  <div class="flex flex-col gap-y-40 justify-center py-20 bg-black min-h-screen overflow-hidden " id="smooth-content">
+
+  <div class="flex flex-col gap-y-40 justify-center py-20 bg-black min-h-screen overflow-hidden " >
     <Hero/>
     <InfoBlock />
     <AnimatedSection></AnimatedSection>
   </div>
-  </div>
+
 </template>

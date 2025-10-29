@@ -2,12 +2,11 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import ScrollSmoother from 'gsap/ScrollSmoother'
 import CTAAnimated from '../CTA-Animated.vue'
 import { sections } from '~/data/Home'
 
 const cursorStore = useCursor()
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+gsap.registerPlugin(ScrollTrigger)
 
 let mm
 const scroll = () => {
@@ -31,21 +30,10 @@ const scroll = () => {
           ease: "none",
           startAt: { filter: "brightness(100%) blur(0px)" },
           filter: isLast ? "none" : "brightness(50%) blur(10px)",
-          scale: 0.9,
           borderRadius: 40,
         },
         "<"
       )
-      // Animate the image inside the panel
-      .to(
-        panel.querySelector(".sticky-section_image"),
-        {
-          yPercent: -40,
-          rotation: index % 2 === 0 ? 20 : -20,
-          ease: "power1.inOut",
-        },
-        "<"
-      );
   });
 };
 
@@ -54,9 +42,8 @@ onMounted(() => {
   const details = gsap.utils.toArray('.desktopContentSection:not(:first-child)')
   const photos = gsap.utils.toArray('.desktopPhoto:not(:first-child)')
   const allPhotos = gsap.utils.toArray('.desktopPhoto')
-  scroll()
   gsap.set(photos, { yPercent: 101 })
-
+	scroll()
   mm = gsap.matchMedia()
 
   mm.add('(min-width: 600px)', () => {
@@ -69,12 +56,6 @@ onMounted(() => {
       pin: '.right'
     })
 
-    const smoother = ScrollSmoother.create({
-      wrapper: '#smooth-wrapper',
-      content: '#smooth-content',
-      smooth: 0.8,
-      effects: true
-    })
 
     details.forEach((detail, index) => {
       const animation = gsap.timeline()
@@ -101,7 +82,7 @@ onBeforeUnmount(() => {
 
 <template>
  <section class=" relative md:px-5">
-  <div class="bg-[#1A1A1A] rounded-4xl sticky top-0 text-white sticky-section_panel">
+  <div class="bg-[#1A1A1A] rounded-4xl  top-0 text-white sticky-section_panel">
     <div class="gallery" id="smooth-content">
       <!-- LADO IZQUIERDO (Texto desktop) -->
       <div class="left">

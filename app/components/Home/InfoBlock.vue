@@ -2,11 +2,10 @@
 import { ref, onMounted } from 'vue'
 import { BarChart3, TrendingUp, Database, Zap } from 'lucide-vue-next'
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import SplitText from 'gsap/SplitText';
 
 
-gsap.registerPlugin(SplitText, ScrollTrigger);
+gsap.registerPlugin(SplitText);
 
 const isVisible = ref(false)
 const warnings = ref([
