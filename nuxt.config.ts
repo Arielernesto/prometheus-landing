@@ -10,7 +10,9 @@ export default defineNuxtConfig({
      */
     componentDir: './components/ui'
   },
-
+build: {
+    transpile: ['gsap']
+},
   css: ['~/assets/css/main.css'],
   modules: ["@nuxt/image", "shadcn-nuxt", "nuxt-marquee", "@pinia/nuxt"],
   vite: {

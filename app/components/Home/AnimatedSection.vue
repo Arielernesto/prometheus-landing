@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import gsap from 'gsap'
+import gsap, { registerPlugin} from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import CTAAnimated from '../CTA-Animated.vue'
 import { sections } from '~/data/Home'
