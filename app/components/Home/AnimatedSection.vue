@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import gsap, { registerPlugin} from 'gsap'
+import gsap from 'gsap'
+import { scroll } from '~/lib/animations'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import CTAAnimated from '../CTA-Animated.vue'
 import { sections } from '~/data/Home'
@@ -9,41 +10,15 @@ const cursorStore = useCursor()
 gsap.registerPlugin(ScrollTrigger)
 
 let mm
-const scroll = () => {
-  const panels = Array.from(document.querySelectorAll(".sticky-section_panel"));
-
-  panels.forEach((panel, index) => {
-    const isLast = index === panels.length - 1;
-
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: panel,
-          start: "top top",
-          scrub: true,
-        },
-      })
-      // Animate panel
-      .to(
-        panel,
-        {
-          ease: "none",
-          startAt: { filter: "brightness(100%) blur(0px)" },
-          filter: isLast ? "none" : "brightness(50%) blur(10px)",
-          borderRadius: 40,
-        },
-        "<"
-      )
-  });
-};
 
 
 onMounted(() => {
+  scroll()
+  
   const details = gsap.utils.toArray('.desktopContentSection:not(:first-child)')
   const photos = gsap.utils.toArray('.desktopPhoto:not(:first-child)')
   const allPhotos = gsap.utils.toArray('.desktopPhoto')
   gsap.set(photos, { yPercent: 101 })
-	scroll()
   mm = gsap.matchMedia()
 
   mm.add('(min-width: 600px)', () => {

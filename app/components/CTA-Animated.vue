@@ -29,25 +29,21 @@
 
     <!-- Botón -->
     <div class="flex justify-center md:justify-start">
-      <button
-        class="inline-flex cursor-pointer items-center justify-center px-8 py-3 text-base sm:text-lg font-medium transition duration-300 rounded-full border-2"
+      <AnimatedLeftButton
         @mouseover="hover = true"
         @mouseleave="hover = false"
-        :style="{
-          borderColor: PrimitiveColor,
-          color: PrimitiveColor,
-          backgroundColor: hover ? PrimitiveColor + '33' : 'transparent',
-        }"
+
+        :color="PrimitiveColor"
       >
         {{ buttonLabel }}
-      </button>
+      </AnimatedLeftButton>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-
+import AnimatedLeftButton from './buttons/AnimatedLeftButton.vue';
 const props = defineProps<{
   color?: 'blue' | 'violet' | 'green' | 'dark'
   title: string

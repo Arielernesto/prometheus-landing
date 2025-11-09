@@ -21,8 +21,8 @@ onMounted(() => {
   gsap.set(flair, { xPercent: -50, yPercent: -50 })
 
   // Movimiento suave
-  const xTo = gsap.quickTo(flair, "x", { duration: 0.6, ease: "power3" })
-  const yTo = gsap.quickTo(flair, "y", { duration: 0.6, ease: "power3" })
+  const xTo = gsap.quickTo(flair, "x", { duration: 0.3, ease: "power3" })
+  const yTo = gsap.quickTo(flair, "y", { duration: 0.3, ease: "power3" })
 
   const handleMouseMove = (e) => {
     xTo(e.clientX)
@@ -48,10 +48,11 @@ onMounted(() => {
   top: 0;
   left: 0;
   pointer-events: none;
-  transition: all 0.25s ease;
+
 }
 
 .flair-hover {
+  cursor: none !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,6 +60,7 @@ onMounted(() => {
   height: 60px;
   color: #fff;
   font-weight: bold;
+  transition: 0.15s;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 </style>

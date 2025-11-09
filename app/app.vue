@@ -4,6 +4,7 @@
   import InfoBlock from './components/Home/InfoBlock.vue';
   import AnimatedSection from './components/Home/AnimatedSection.vue';
   import CursorFollower from './components/CursorFollower.vue';
+  import AnimatedCardsSection from './components/Home/AnimatedCardsSection.vue';
 </script>
 
 <template>
@@ -14,6 +15,7 @@
     <Hero/>
     <InfoBlock />
     <AnimatedSection></AnimatedSection>
+    <AnimatedCardsSection></AnimatedCardsSection>
   </div>
 
 </template>
