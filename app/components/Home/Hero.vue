@@ -6,7 +6,7 @@ const images = [
   {
     src: 'tools.png',
     width: 250,
-    height: 300,
+    height: 300,  
     class: '',
     badge: "Integracion con tus apps"
   },

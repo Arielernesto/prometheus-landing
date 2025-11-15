@@ -112,7 +112,7 @@ onBeforeUnmount(() => {
           <div
             v-for="(item, index) in sections"
             :key="'photo-' + index"
-            class="desktopPhoto"
+            class="desktopPhoto cursor-none"
           >
             <img :src="item.image" alt="" class="w-full h-full object-cover " v-on:mouseleave="cursorStore.desactivateHoverClickPhoto" v-on:mouseover="cursorStore.activateHoverClickPhoto(item.color)" />
           </div>
