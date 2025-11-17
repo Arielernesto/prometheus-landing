@@ -7,6 +7,7 @@
   import AnimatedCardsSection from './components/Home/AnimatedCardsSection.vue';
   import DashboardSection from './components/Home/DashboardSection.vue';
   import LeadsSection from './components/Home/LeadsSection.vue';
+  import Footer from './components/Footer.vue';
 </script>
 
 <template>
@@ -21,5 +22,7 @@
     <DashboardSection></DashboardSection>
     <LeadsSection></LeadsSection>
   </div>
+
+  <Footer></Footer>
 
 </template>
