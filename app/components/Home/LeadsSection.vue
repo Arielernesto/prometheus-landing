@@ -63,6 +63,7 @@
 </template>
 
 <script setup lang="ts">
+
 import LeadsButton from '../buttons/LeadsButton.vue';
 type Testimonial = {
   text: string
@@ -89,5 +90,3 @@ const testimonials: Testimonial[] = [
 ]
 </script>
 
-<style scoped>
-</style>
