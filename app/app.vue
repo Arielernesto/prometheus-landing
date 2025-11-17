@@ -6,6 +6,7 @@
   import CursorFollower from './components/CursorFollower.vue';
   import AnimatedCardsSection from './components/Home/AnimatedCardsSection.vue';
   import DashboardSection from './components/Home/DashboardSection.vue';
+  import LeadsSection from './components/Home/LeadsSection.vue';
 </script>
 
 <template>
@@ -18,6 +19,7 @@
     <AnimatedSection></AnimatedSection>
     <AnimatedCardsSection></AnimatedCardsSection>
     <DashboardSection></DashboardSection>
+    <LeadsSection></LeadsSection>
   </div>
 
 </template>

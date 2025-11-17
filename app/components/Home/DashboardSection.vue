@@ -1,5 +1,5 @@
 <template>
-  <div ref="heroRef" class="text-center py-20 px-6">
+  <div ref="heroRef" class="text-center pt-20 px-6">
     <h1 class="text-5xl md:text-6xl font-bold mb-6 text-foreground">
       Scale your analytics without hiring
     </h1>

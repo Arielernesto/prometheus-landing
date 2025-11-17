@@ -44,11 +44,10 @@ onMounted(() => {
   z-index: 99999;
   position: fixed;
   border-radius: 50%;
-  mix-blend-mode: difference;
   top: 0;
   left: 0;
   pointer-events: none;
-
+  transition: width 0.2s, height 0.2s, padding 0.2s;
 }
 
 .flair-hover {
